@@ -1,0 +1,99 @@
+
+body {
+    background: #f5f5f5;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+.wrapper {
+    width: 1226px;
+    margin: auto ;
+}
+
+.phone {
+    border: 1px solid transparent ;
+}
+
+/* 后代选择器
+   选择祖先的选择器(.phone)和选择子孙的选择器(.title)之间使用空格隔开 */
+.phone .title {
+    /* 将当前元素设置为弹性容器则其内部的直接子元素就是弹性盒子 */
+    display: flex;
+    /* 用于设置或检索弹性盒子元素在主轴方向上的对齐方式 */
+    justify-content: space-between;
+    height: 58px;
+}
+
+/* 后代选择器 */
+.phone .title h2 {
+    /* 设置或检索弹性盒伸缩基准值 */
+    flex-basis: 100px;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+    margin: 0;
+}
+
+/* 后代选择器 */
+.phone .title div {
+    /* 设置或检索弹性盒伸缩基准值 */
+    flex-basis: 100px;
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+    /* 设置元素内文本的对齐方式 */
+    text-align: right;
+}
+
+.phone .list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.phone .list .mix-fold {
+    height: 614px;
+    flex-basis: 234px;
+    background: yellow;
+}
+
+.phone .mix-fold img {
+    height: 614px;
+    width: 234px;
+}
+
+/* 在父元素 .list 中 .items 是个 弹性项目 */
+.phone .list .items {
+    flex-basis: 978px;
+}
+
+/* 后代选择器: 祖先选择器和子孙选择器之间用空格隔开
+   亲子选择器: 父元素选择器和子元素选择器之间用 大于号 连接 */
+.phone .items>div {
+    display: flex;
+    /* 设置主轴 ( row 表示水平方向从左到右是主轴 )*/
+    flex-direction: row ;
+    /* 设置 弹性容器 中的 弹性项目 是否"折行"或"折列" */
+    flex-wrap: wrap;
+    /* 用于设置或检索弹性盒子元素在主轴方向上的对齐方式 */
+    justify-content: space-between ;
+    height: 614px;
+}
+
+.phone .items .item {
+    width: 234px;
+    height: 300px;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+
+.toggle {
+    transition: all .2s linear ;
+}
+
+/* 伪类用于选择元素的某种状态，比如 :hover 表示鼠标悬浮到元素上 */
+.toggle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px blue;
+}
+
